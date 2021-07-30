@@ -43,7 +43,11 @@ mv /path/to/RenderMan_Installer.rpm /path/to/RenderMan-For-Arch/
 
 ```bash
 chmod +x install.sh
+```
+```bash
 chmod +x uninstall.sh
+```
+```bash
 chmod +x -R scripts
 ```
 
@@ -53,6 +57,46 @@ chmod +x -R scripts
 6. RenderMan should now be working! If you want to repeat a certain part of the installation
    process, you can execute the corresponding script located in "scripts".
 
+## RenderMan for Maya
+
+Note: For this plug-in to work, you need to use [this Maya install script](https://github.com/MyHCel/Maya-For-Arch).
+
+The RenderMan installer will only download the rpm package to your "Downloads" folder.
+
+1. Put the "rpm" file of the RenderMan for Maya plug-in inside the "RenderMan-For-Arch" folder.
+
+```bash
+mv /path/to/RenderMan_for_Maya_installer.rpm /path/to/RenderMan-For-Arch/
+```
+
+2. Execute the folowing commands
+
+```bash
+./scripts/convert.sh
+```
+```bash
+./scripts/install_pkg.sh
+```
+
+3. Open Maya and go to Windows/'Settings/Preferences'/'Plug-in Manager'
+
+4. Look for "RenderMan_for_Maya.py". Select "load" and "autoload".
+
+5. RenderMan for Maya should now be working!
+
+## RenderMan for Blender
+
+1. Open Blender and go to Edit/Preferences/Add-ons/Instal...
+
+2. Look for the "RenderMan for Blender" zip
+   file on your "Downloads" folder.
+
+3. Select it and click on "Install Add-on"
+
+4. After the Add-on appears, click the square on the left to enable it.
+
+5. RenderMan for Blender should no be working!
+
 ## Uninstalling RenderMan
 
 1. Execute the uninstall script
@@ -61,19 +105,18 @@ chmod +x -R scripts
 ./uninstall.sh
 ```
 
-The uninstaller will remove the installed package (only the RenderMan package) from pacman and will delete all the directories used by RenderMan.
+The uninstaller will remove the installed packages (except for dependencies) from pacman and will delete all the directories used by RenderMan.
 
 ## Known issues
 
-* RenderMan for Maya does not install automatically and is currently not working
-  (at least, I haven't figured it out yet).
+* None... for now.
 
 ## Notes
 
 * You can delete the "RenderMan-For-Arch" folder once the installation is done.
 
-* If you plan to use RenderMan for Blender, you will find the addon "zip" file in your Downloads
-  folder. Also, RenderMan 24 is currently compatible only with Blender Versions from 2.83 LTS up to 2.92.
+* If you plan to use RenderMan for Blender, it is currently compatible only with Blender Versions
+  from 2.83 LTS up to 2.92.
 
 ## I think that's all
 

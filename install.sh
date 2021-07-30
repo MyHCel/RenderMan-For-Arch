@@ -12,9 +12,9 @@
 
 ./scripts/install_pkg.sh
 
-#Make symlinks
+# Symlink libraries
 
-./scripts/symlink.sh
+./scripts/libs.sh
 
 # Install RenderMan
 
