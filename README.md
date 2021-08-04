@@ -6,7 +6,7 @@ RenderMan For Arch is a simple script that helps you install Pixars' RenderMan o
 
 Currently, the script works with RenderMan 23 and 24
 
-## Dpependencies
+## Dependencies
 
 These are the dependencies needed by the script. All dependencies needed by RenderMan are installed by the script.
 
