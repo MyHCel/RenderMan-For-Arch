@@ -2,4 +2,4 @@
 
 VERSION=$(ls /opt/pixar | grep RenderMan-Installer)
 
-sudo /opt/pixar/$VERSION/bin/RenderManInstaller
+/opt/pixar/$VERSION/bin/RenderManInstaller

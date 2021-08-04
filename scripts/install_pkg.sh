@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Install all packages
+# ====== Install all packages ======
 
 cd pkg
 
-sudo pacman -U --noconfirm $(ls | grep renderman | grep .zst)
+pacman -U --noconfirm $(ls | grep renderman | grep .zst)
 
 cd ..

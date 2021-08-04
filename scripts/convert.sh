@@ -1,17 +1,21 @@
-# Convert rpm to deb
+#!/bin/bash
 
-mkdir pkg
+source env.sh
 
-sudo alien -d -c -v $(ls | grep RenderMan | grep .rpm)
+# ====== Convert rpm to deb ======
 
-# Move deb packages to "pkg" folder
+sudo -u $NONROOT mkdir pkg
+
+alien -d -c -v $(ls | grep RenderMan | grep .rpm)
+
+# ====== Move deb packages to "pkg" folder ======
 
 mv $(ls | grep renderman | grep .deb) pkg
 
-# Convert deb packages to zst
+# ====== Convert deb packages to zst ======
 
 cd pkg
 
-sudo debtap -Q $(ls | grep renderman | grep .deb)
+debtap -Q $(ls | grep renderman | grep .deb)
 
 cd ..
