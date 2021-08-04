@@ -30,10 +30,10 @@ git clone https://github.com/MyHCel/RenderMan-For-Arch.git
 mv /path/to/RenderMan_Installer.rpm /path/to/RenderMan-For-Arch/
 ```
 
-4. Execute the installer script (don't do it as root). It will ask for your password a few times.
+4. Execute the installer script (don't do it as root). It will ask for your password once.
 
-   Note: This will update your system and install all required dependecies. If you don't want that
-   to happen, modify "scripts/install_dep.sh"
+   Note: This will update your system and install all required dependecies. If you don't want to
+   update your system, modify "scripts/dependencies.sh"
 
 ```bash
 ./install.sh
@@ -61,28 +61,20 @@ chmod +x -R scripts
 
 Note: For this plug-in to work, you need to use [this Maya install script](https://github.com/MyHCel/Maya-For-Arch).
 
-The RenderMan installer will only download the rpm package to your "Downloads" folder.
+The RenderMan installer will only download the rpm package to your "Downloads" folder, it will not
+install it.
 
-1. Put the "rpm" file of the RenderMan for Maya plug-in inside the "RenderMan-For-Arch" folder.
-
-```bash
-mv /path/to/RenderMan_for_Maya_installer.rpm /path/to/RenderMan-For-Arch/
-```
-
-2. Execute the folowing commands
+1. Execute the following script as root.
 
 ```bash
-./scripts/convert.sh
-```
-```bash
-./scripts/install_pkg.sh
+sudo ./scripts/install_rfm.sh
 ```
 
-3. Open Maya and go to Windows/'Settings/Preferences'/'Plug-in Manager'
+2. Open Maya and go to Windows/'Settings/Preferences'/'Plug-in Manager'
 
-4. Look for "RenderMan_for_Maya.py". Select "load" and "autoload".
+3. Look for "RenderMan_for_Maya.py". Select "load" and "autoload".
 
-5. RenderMan for Maya should now be working!
+4. RenderMan for Maya should now be working!
 
 ## RenderMan for Blender
 
@@ -99,10 +91,10 @@ mv /path/to/RenderMan_for_Maya_installer.rpm /path/to/RenderMan-For-Arch/
 
 ## Uninstalling RenderMan
 
-1. Execute the uninstall script
+1. Execute the uninstall script as root.
 
 ```
-./uninstall.sh
+sudo ./uninstall.sh
 ```
 
 The uninstaller will remove the installed packages (except for dependencies) from pacman and will delete all the directories used by RenderMan.
@@ -115,8 +107,8 @@ The uninstaller will remove the installed packages (except for dependencies) fro
 
 * You can delete the "RenderMan-For-Arch" folder once the installation is done.
 
-* If you plan to use RenderMan for Blender, it is currently compatible only with Blender Versions
-  from 2.83 LTS up to 2.92.
+* RenderMan for Blender is currently compatible with Blender Versions
+  from 2.83 LTS up to 2.93.1.
 
 ## I think that's all
 

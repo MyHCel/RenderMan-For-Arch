@@ -1,21 +1,8 @@
 #!/bin/bash
 
-# Install dependencies
+echo -e "\n====== RenderMan For Arch by MyHCel ======\n"
 
-./scripts/install_dep.sh
+echo -e "NONROOT=$USER\nHOME_DIR=$HOME" > env.sh
+chmod +x env.sh
 
-# Convert packages
-
-./scripts/convert.sh
-
-# Install all packages
-
-./scripts/install_pkg.sh
-
-# Symlink libraries
-
-./scripts/libs.sh
-
-# Install RenderMan
-
-./scripts/install_renderman.sh
+sudo ./scripts/install_all.sh
